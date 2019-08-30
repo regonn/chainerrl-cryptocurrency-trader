@@ -1,0 +1,5 @@
+.DS_Store
+charts/*
+csv/*
+results/*
+btcusd.db
