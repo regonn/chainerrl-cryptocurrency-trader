@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import chainer
+# v0.7.0 で動作確認
 import chainerrl
 from chainerrl import replay_buffer
 from chainerrl import experiments
@@ -23,7 +24,7 @@ import logging
 import sys
 import os
 logging.basicConfig(level=logging.INFO, stream=sys.stdout, format='')
-from chainerrl_visualizer import launch_visualizer
+# from chainerrl_visualizer import launch_visualizer
 
 plotly.io.orca.ensure_server()
 
@@ -333,10 +334,6 @@ class Trade(gym.core.Env):
             return PER_FRAME
         else:
             return random.randint(0, self.df_row - IMAGE_TIME_STEPS - MAX_TIME - PER_FRAME)
-
-
-def phi(x):
-    return np.asarray(x, dtype=np.float32) / 255
 
 
 def make_env(process_idx=0, test=False):
